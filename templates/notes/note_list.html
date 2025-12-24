@@ -4,4 +4,4 @@
     <li><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></li>
     {% endfor %}
 </ul> 
-<a href="">Add note</a>
+<a href="{% url 'create-post' %}">Add note</a>
