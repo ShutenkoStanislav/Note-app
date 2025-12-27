@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-
-<div class="dropdown-center">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-  <i class="bi bi-person-circle"></i>  s;dkg;sdk;
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Profile</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Log out</a></li>
-    <li><a class="dropdown-item" href="#">Sing in</a></li>
-  </ul>
+<div class="d-flex flex-column align-items-start gap-3">
+  <div class="dropdown-center">
+    <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bi bi-person-circle"></i> Username
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Profile</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" href="#">Log out</a></li>
+      <li><a class="dropdown-item" href="#">Sing in</a></li>
+   </ul>
+  </div>
+ 
+<button type="button" class="btn btn-lg" href="{% url 'create-post' %}"><i class="bi bi-plus-circle-fill"></i> Add note</button>
+<button type="button" class="btn btn-lg" href="#"><i class="bi bi-plus-circle-fill"></i> Add folder</button>
+<button type="button" class="btn btn-lg" href="#"><i class="bi bi-calendar-fill"></i> Today</button>
+<h2>My tasks</h2>
 </div>
-<h1>Note list</h1>
-<ul>
-    {% for note in notes%}
-    <li><a href="{% url 'note_detail' note.pk %}">{{ note.title }}</a></li>
-    {% endfor %}
-</ul> 
-<a href="{% url 'create-post' %}">Add note</a>
+
 
 {% endblock %}
