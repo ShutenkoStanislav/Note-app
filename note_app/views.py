@@ -2,11 +2,13 @@ from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView
 from note_app import models
 from note_app.forms import NoteForm
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 class NoteListView(ListView):
     model = models.Note
     context_object_name = "notes"
-    template_name = "notes/note_list.html"
+    template_name = "notes/home_page.html"
 
 class NoteDetailView(DetailView):
     model = models.Note
@@ -22,4 +24,17 @@ def add_note(request):
     else:
         form = NoteForm()
     return render(request, "notes/add_note.html", {'form': form})
+
+# @login_required
+# def profile(request):
+#     context = {
+#         "user" : request.user,
+#     }
+#     return render(
+#         request,
+#         "notes/profile.html",
+#         context,
+#     )
+
+    
 

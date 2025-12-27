@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Note(models.Model):
   title = models.CharField(max_length=100)
   content = models.TextField()
@@ -10,4 +11,6 @@ class Note(models.Model):
   class Meta:
     verbose_name = "note"
     verbose_name_plural = "notes"
+
+
 
