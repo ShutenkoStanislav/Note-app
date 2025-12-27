@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="d-flex flex-column align-items-start gap-3">
-  <div class="dropdown-center">
+<div class="bg-light border-end" style="width: 25%; min-height: 100vh;">
+  
+  <div class="dropdown-center mb-3">
     <button class="btn btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
       <i class="bi bi-person-circle"></i> Username
     </button>
@@ -10,15 +11,32 @@
       <li><a class="dropdown-item" href="#">Profile</a></li>
       <li><hr class="dropdown-divider"></li>
       <li><a class="dropdown-item" href="#">Log out</a></li>
-      <li><a class="dropdown-item" href="#">Sing in</a></li>
-   </ul>
+      <li><a class="dropdown-item" href="#">Sign in</a></li>
+    </ul>
   </div>
- 
-<button type="button" class="btn btn-lg" href="{% url 'create-post' %}"><i class="bi bi-plus-circle-fill"></i> Add note</button>
-<button type="button" class="btn btn-lg" href="#"><i class="bi bi-plus-circle-fill"></i> Add folder</button>
-<button type="button" class="btn btn-lg" href="#"><i class="bi bi-calendar-fill"></i> Today</button>
-<h2>My tasks</h2>
+
+  <div class="d-flex flex-column align-items-start gap-3">
+    <button type="button" class="btn btn-lg" href="{% url 'create-post' %}">
+      <i class="bi bi-plus-circle-fill"></i> Add note
+    </button>
+    <button type="button" class="btn btn-lg" href="#">
+      <i class="bi bi-plus-circle-fill"></i> Add folder
+    </button>
+    <button type="button" class="btn btn-lg" href="#">
+      <i class="bi bi-calendar-fill"></i> Today
+    </button>
+  <h2>My tasks</h2>
+  </div>
+
+  
+  
+  <div class="d-flex flex-column align-items-start gap-3 ps-4">
+    <h3># folder name</h3>
+    <h3># folder name2</h3>
+    <h3># folder name3</h3>
+  </div>
 </div>
+
 
 
 {% endblock %}
